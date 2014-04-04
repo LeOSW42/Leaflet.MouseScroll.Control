@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Control MouseScroll Demo</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="leaflet/leaflet.css" />
+	<link rel="stylesheet" href="L.Control.MouseScroll.css" />
+</head>
+<body>
+	<div id="map" style="width: 600px; height: 400px"></div>
+
+	<script src="leaflet/leaflet-src.js"></script>
+	<script src="L.Control.MouseScroll.js"></script>
+	<script>
+
+		var map = L.map("map", {
+		  layers: L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"),
+		  center: [51.505, -0.09],
+		  zoom: 3,
+		  minZoom: 2,
+		  maxZoom: 16,
+		  scrollWheelZoom: false
+		})
+
+		map.addControl(new L.Control.MouseScroll())
+
+	</script>
+</body>
+</html>
