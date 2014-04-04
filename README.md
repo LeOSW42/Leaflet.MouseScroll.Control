@@ -1,0 +1,1 @@
+A plugin to add a button to enable/disable zoom by mouse scrolling
