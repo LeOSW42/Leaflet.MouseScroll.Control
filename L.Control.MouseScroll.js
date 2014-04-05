@@ -2,18 +2,19 @@ L.Control.MouseScroll = L.Control.Zoom.extend({
   options: {
     position: "topleft",
     mouseScrollText: "Scroll Zoom",
+    forceSeparateButton: false,
     mouseScrollTitle: "Scroll Zoom"
   },
 
   onAdd: function (map) {
-    var zoomName = "leaflet-control-scrollzoom"
-      , container = L.DomUtil.create("div", zoomName + " leaflet-bar")
+    var scrollZoom = "leaflet-control-scrollzoom"
+      , container = L.DomUtil.create("div", scrollZoom + " leaflet-bar")
       , options = this.options
 
     this._map = map
 
     this._mouseScrollButton = this._createButton(options.mouseScrollText, options.mouseScrollTitle,
-     zoomName, container, this._mouseScroll, this)
+     scrollZoom, container, this._mouseScroll, this)
 
     this._updateDisabled()
     map.on('focus', this._updateDisabled, this)
